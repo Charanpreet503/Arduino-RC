@@ -1,15 +1,15 @@
-int m1a = 8;
-int m1b = 9;
-int m2a = 10;
-int m2b = 11;
+int motorT11 = 8;
+int motorT12 = 9;
+int motorT21 = 10;
+int motorT22 = 11;
 char val;
 
 void setup()
 {
-  pinMode(m1a, OUTPUT); // Digital pin 10 set as output Pin
-  pinMode(m1b, OUTPUT); // Digital pin 11 set as output Pin
-  pinMode(m2a, OUTPUT); // Digital pin 12 set as output Pin
-  pinMode(m2b, OUTPUT); // Digital pin 13 set as output Pin
+  pinMode(motorT11, OUTPUT); // Digital pin 10 set as output Pin
+  pinMode(motorT12, OUTPUT); // Digital pin 11 set as output Pin
+  pinMode(motorT21, OUTPUT); // Digital pin 12 set as output Pin
+  pinMode(motorT22, OUTPUT); // Digital pin 13 set as output Pin
   Serial.begin(9600);
 }
 
@@ -24,30 +24,30 @@ void loop()
   switch (val)
   {
     case 'F':
-      {
-        Forward();
-        break;
-      }
+    {
+      Forward();
+      break;
+    }
     case 'B':
-      {
-        Backward();
-        break;
-      }
+    {
+      Backward();
+      break;
+    }
     case 'L':
-      {
-        Left();
-        break;
-      }
+    {
+      Left();
+      break;
+    }
     case 'R':
-      {
-        Right();
-        break;
-      }
+    {
+      Right();
+      break;
+    }
     case 'S':
-      {
-        Stop();
-        break;
-      }
+    {
+      Stop();
+      break;
+    }
     default:
       break;
   }
@@ -55,40 +55,72 @@ void loop()
 
 void Forward()
 {
-  digitalWrite(m1a, HIGH);
-  digitalWrite(m1b, LOW);
-  digitalWrite(m2a, HIGH);
-  digitalWrite(m2b, LOW);
+  digitalWrite(motorT11, HIGH);
+  digitalWrite(motorT12, LOW);
+  digitalWrite(motorT21, HIGH);
+  digitalWrite(motorT22, LOW);
 }
 
 void Backward()
 {
-  digitalWrite(m1a, LOW);
-  digitalWrite(m1b, HIGH);
-  digitalWrite(m2a, LOW);
-  digitalWrite(m2b, HIGH);
+  digitalWrite(motorT11, LOW);
+  digitalWrite(motorT12, HIGH);
+  digitalWrite(motorT21, LOW);
+  digitalWrite(motorT22, HIGH);
 }
 
 void Left()
 {
-  digitalWrite(m1a, LOW);
-  digitalWrite(m1b, LOW);
-  digitalWrite(m2a, HIGH);
-  digitalWrite(m2b, LOW);
+  digitalWrite(motorT11, LOW);
+  digitalWrite(motorT12, LOW);
+  digitalWrite(motorT21, HIGH);
+  digitalWrite(motorT22, LOW);
 }
 
 void Right()
 {
-  digitalWrite(m1a, HIGH);
-  digitalWrite(m1b, LOW);
-  digitalWrite(m2a, LOW);
-  digitalWrite(m2b, LOW);
+  digitalWrite(motorT11, HIGH);
+  digitalWrite(motorT12, LOW);
+  digitalWrite(motorT21, LOW);
+  digitalWrite(motorT22, LOW);
+}
+
+void Forward_right()
+{
+  digitalWrite(motorT11, HIGH);
+  digitalWrite(motorT12, LOW);
+  digitalWrite(motorT21, LOW);
+  digitalWrite(motorT22, LOW);
+}
+
+void Forward_left()
+{
+  digitalWrite(motorT11, LOW);
+  digitalWrite(motorT12, LOW);
+  digitalWrite(motorT21, HIGH);
+  digitalWrite(motorT22, LOW);
+}
+
+void Backward_right()
+{
+  digitalWrite(motorT11, LOW);
+  digitalWrite(motorT12, HIGH);
+  digitalWrite(motorT21, LOW);
+  digitalWrite(motorT22, LOW);
+}
+
+void Backward_left()
+{
+  digitalWrite(motorT11, LOW);
+  digitalWrite(motorT12, LOW);
+  digitalWrite(motorT21, LOW);
+  digitalWrite(motorT22, HIGH);
 }
 
 void Stop()
 {
-  digitalWrite(m1a, LOW);
-  digitalWrite(m1b, LOW);
-  digitalWrite(m2a, LOW);
-  digitalWrite(m2b, LOW);
+  digitalWrite(motorT11, LOW);
+  digitalWrite(motorT12, LOW);
+  digitalWrite(motorT21, LOW);
+  digitalWrite(motorT22, LOW);
 }
