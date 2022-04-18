@@ -85,38 +85,6 @@ void Right()
   digitalWrite(m2b, LOW);
 }
 
-void Forward_right()
-{
-  digitalWrite(m1a, HIGH);
-  digitalWrite(m1b, LOW);
-  digitalWrite(m2a, LOW);
-  digitalWrite(m2b, LOW);
-}
-
-void Forward_left()
-{
-  digitalWrite(m1a, LOW);
-  digitalWrite(m1b, LOW);
-  digitalWrite(m2a, HIGH);
-  digitalWrite(m2b, LOW);
-}
-
-void Backward_right()
-{
-  digitalWrite(m1a, LOW);
-  digitalWrite(m1b, HIGH);
-  digitalWrite(m2a, LOW);
-  digitalWrite(m2b, LOW);
-}
-
-void Backward_left()
-{
-  digitalWrite(m1a, LOW);
-  digitalWrite(m1b, LOW);
-  digitalWrite(m2a, LOW);
-  digitalWrite(m2b, HIGH);
-}
-
 void Stop()
 {
   digitalWrite(m1a, LOW);
